@@ -1,0 +1,59 @@
+1. test veritabanınızda employee isimli sütun bilgileri
+id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+
+CREATE TABLE employee(
+id INTEGER,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+email VARCHAR(100),
+birthday DATE
+); 
+
+2. Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+
+insert into employee (first_name, last_name, email, birthday) values ('Bendix', 'Spellworth', 'bspellworth0@businessinsider.com', '1993-02-15');
+insert into employee (first_name, last_name, email, birthday) values ('Alfie', 'Cowperthwaite', 'acowperthwaite1@multiply.com', null);
+insert into employee (first_name, last_name, email, birthday) values ('Barbabas', 'Eisig', 'beisig2@ebay.com', '2004-09-05');insert into employee (first_name, last_name, email, birthday) values ('Ephraim', 'Iron', 'eiron3@rediff.com', null);
+...
+insert into employee (first_name, last_name, email, birthday) values ('Lacy', 'Brokenshaw', 'lbrokenshaw1d@ask.com', '2002-09-12');
+
+3. Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+
+ 1. UPDATE employee
+ SET first_name = 'Ahmet'
+ WHERE email LIKE 'A%';
+
+ 2. UPDATE employee
+ SET first_name = 'promoted'
+ WHERE first_name LIKE '%N';
+
+ 3. UPDATE employee
+ SET email = 'fired'
+ WHERE id = 10;
+
+ 4. UPDATE employee
+ SET birthday = '1950-02-02'
+ WHERE last_name LIKE 'C%';
+
+ 5. UPDATE employee
+ SET email = 'required'
+ WHERE id > 12;
+
+4. Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+
+ 1. DELETE FROM employee
+ WHERE id = 13;
+
+ 2. DELETE FROM employee
+ WHERE birthday = '1980-05-12';
+
+ 3. DELETE FROM employee
+ WHERE email LIKE '%.com';
+
+ 4. DELETE FROM employee
+ WHERE first_name ='Ahmet';
+
+ 5. DELETE FROM employee
+ WHERE last_name NOT LIKE 'p%';
+ 
+ 
